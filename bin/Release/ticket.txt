@@ -1,0 +1,32 @@
+<xpml><page quantity='0' pitch='25.0 mm'></xpml>'Seagull:2.1:DP
+INPUT OFF
+VERBOFF
+INPUT ON
+SYSVAR(48) = 0
+ERROR 15,"FONT NOT FOUND" 
+ERROR 18,"DISK FULL" 
+ERROR 26,"PARAMETER TOO LARGE" 
+ERROR 27,"PARAMETER TOO SMALL" 
+ERROR 37,"CUTTER DEVICE NOT FOUND" 
+ERROR 1003,"FIELD OUT OF LABEL" 
+SYSVAR(35)=0
+OPEN "tmp:setup.sys "FOR OUTPUT AS #1 
+PRINT#1,"Printing,Media,Print Area,Media Margin (X),0" 
+PRINT#1,"Printing,Media,Print Area,Media Width,795" 
+PRINT#1,"Printing,Media,Print Area,Media Length,201" 
+PRINT#1,"Printing,Media,Clip Default,On" 
+CLOSE #1
+SETUP "tmp:setup.sys" 
+KILL "tmp:setup.sys" 
+<xpml></page></xpml><xpml><page quantity='1' pitch='25.0 mm'></xpml>CLL
+OPTIMIZE "BATCH" ON
+PP192,160:AN7
+BARSET "CODE128B",2,1,3,102
+PB "DDFAR00000000" 
+PP273,60:NASC 8
+FT "Andale Mono",12,0,99
+PT "DDFAR00000000" 
+LAYOUT RUN "" 
+PF
+PRINT KEY OFF
+<xpml></page></xpml><xpml><end/></xpml>
