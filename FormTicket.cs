@@ -147,7 +147,7 @@ namespace TicketPrint
             this.IsMdiContainer = true;
             FormTool formTool = new FormTool();
             formTool.ShowDialog(this);
-            this.Close();
+            //this.Close();
         }
         private void  LoadFormConfiguration() {
 

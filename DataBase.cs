@@ -5,6 +5,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TicketPrint
 {
@@ -16,8 +17,40 @@ namespace TicketPrint
 
         public Boolean TicketInsert(string[] sCode, string sDate)
         {
+            string []sResult = SelectValidate(sCode);
+            if (sResult[1]!= sCode[0] && sResult[2] != sCode[1])
+            {
+                string command = "INSERT INTO BillingTicket values(NULL,'" + sCode[0] + "','" + sCode[1] + "','" + sDate + "')";
+                SQLiteCommand insert = new SQLiteCommand(command, connection);
+                iResult = insert.ExecuteNonQuery();
+                if (iResult > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else {
 
-            string command = "INSERT INTO BillingTicket values(NULL,'" + sCode[0] + "','" + sCode[1] + "','" + sDate + "')";
+                string command = "INSERT OR REPLACE INTO BillingTicket values("+ sResult[0]+",'" + sResult[1] + "','" + sResult[2] + "','" + sDate + "')";
+                SQLiteCommand insert = new SQLiteCommand(command, connection);
+                iResult = insert.ExecuteNonQuery();
+                if (iResult > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+ 
+        }
+        public Boolean TicketClean(string[] sCode)
+        {
+            string command = "DELETE FROM BillingTicket  WHERE Reference='" + sCode[1] + "'";
             SQLiteCommand insert = new SQLiteCommand(command, connection);
             iResult = insert.ExecuteNonQuery();
             if (iResult > 0)
@@ -28,6 +61,7 @@ namespace TicketPrint
             {
                 return false;
             }
+             
         }
         public DataTable TicketSelect(string sCodeReferences)
         {
@@ -37,6 +71,20 @@ namespace TicketPrint
             DataTable table = new DataTable("Ticket");
             adapter.Fill(table);
             return table;
+        }
+        public string[] SelectValidate(string[] sCode)
+        {
+            string command = "SELECT *  FROM BillingTicket WHERE Code='"+ sCode[0]+ "' AND Reference='"+ sCode[1] +"'";
+            SQLiteCommand adapter = new SQLiteCommand(command, connection);
+            SQLiteDataReader reader = adapter.ExecuteReader();
+            string [] sResult= new string[3];
+            while (reader.Read())
+            {
+                sResult[0] = "" +reader["Id"];
+                sResult[1] = "" + reader["Code"];
+                sResult[2] = "" + reader["Reference"];
+            }
+            return sResult;
         }
         public DataTable TicketSelect(string sDataSearch, string sCodeReferences)
         {

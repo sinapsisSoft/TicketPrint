@@ -104,7 +104,7 @@ namespace TicketPrint
                 appSettings.Save(ConfigurationSaveMode.Modified);
                 ConfigurationManager.RefreshSection("appSettings");
                 bValidate = true;
-                MessageBox.Show("Se realizo el cambio de código con éxito nuevo #"+ sCodePB, "Ticket" );
+                MessageBox.Show("Se realizo el cambio con éxito  del código #"+ sCodePB, "Ticket" );
             }
             catch (Exception ex)
             {

@@ -38,6 +38,8 @@
             this.TxtCodePB = new System.Windows.Forms.TextBox();
             this.BtnUpdate = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CheckReset = new System.Windows.Forms.CheckBox();
+            this.CheckNewCode = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,7 +120,7 @@
             // BtnUpdate
             // 
             this.BtnUpdate.Enabled = false;
-            this.BtnUpdate.Location = new System.Drawing.Point(56, 157);
+            this.BtnUpdate.Location = new System.Drawing.Point(61, 194);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(134, 36);
             this.BtnUpdate.TabIndex = 7;
@@ -129,19 +131,45 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.CheckNewCode);
+            this.panel1.Controls.Add(this.CheckReset);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.BtnUpdate);
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(259, 236);
+            this.panel1.Size = new System.Drawing.Size(259, 252);
             this.panel1.TabIndex = 8;
+            // 
+            // CheckReset
+            // 
+            this.CheckReset.AutoSize = true;
+            this.CheckReset.Enabled = false;
+            this.CheckReset.Location = new System.Drawing.Point(23, 142);
+            this.CheckReset.Name = "CheckReset";
+            this.CheckReset.Size = new System.Drawing.Size(113, 17);
+            this.CheckReset.TabIndex = 8;
+            this.CheckReset.Text = "Reiniciar Contador";
+            this.CheckReset.UseVisualStyleBackColor = true;
+            this.CheckReset.CheckedChanged += new System.EventHandler(this.CheckValidateRestart);
+            // 
+            // CheckNewCode
+            // 
+            this.CheckNewCode.AutoSize = true;
+            this.CheckNewCode.Enabled = false;
+            this.CheckNewCode.Location = new System.Drawing.Point(23, 165);
+            this.CheckNewCode.Name = "CheckNewCode";
+            this.CheckNewCode.Size = new System.Drawing.Size(94, 17);
+            this.CheckNewCode.TabIndex = 9;
+            this.CheckNewCode.Text = "Nuevo Código";
+            this.CheckNewCode.UseVisualStyleBackColor = true;
+            this.CheckNewCode.CheckedChanged += new System.EventHandler(this.CheckNewReference);
             // 
             // FormTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 277);
             this.Controls.Add(this.TxtCodePB);
             this.Controls.Add(this.TxtSequence);
             this.Controls.Add(this.label1);
@@ -172,5 +200,7 @@
         private System.Windows.Forms.TextBox TxtCodePB;
         private System.Windows.Forms.Button BtnUpdate;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox CheckReset;
+        private System.Windows.Forms.CheckBox CheckNewCode;
     }
 }
