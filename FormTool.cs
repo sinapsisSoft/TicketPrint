@@ -72,7 +72,7 @@ namespace TicketPrint
             }
             else if (sType == 2)
             {
-                bValidation[0] = true;
+                bValidation[0] = false;
                 bValidation[1] = false;
                 bValidation[2] = true;
                 bValidation[3] = true;
@@ -122,15 +122,14 @@ namespace TicketPrint
             }
             else if (sType == 7)
             {
-                bValidation[0] = true;
-                bValidation[1] = false;
+                bValidation[0] = false;
+                bValidation[1] = true;
                 bValidation[2] = true;
                 bValidation[3] = false;
                 bValidation[4] = true;
                 bValidation[5] = true;
                 bValidation[6] = false;
             }
-
 
             TxtSequence.Enabled = bValidation[0];
             TxtCodePB.Enabled = bValidation[1];
@@ -207,7 +206,7 @@ namespace TicketPrint
                             sGetCode[0] = sSequence;
                             sGetCode[1] = sCodePB;
                             InsertData(sGetCode, sDate);
-                      
+                            Application.Exit();
                         }
                         else {
                         MessageBox.Show("Se presento un inconveniente en la acción ");
@@ -220,9 +219,10 @@ namespace TicketPrint
                         if (mValidate==DialogResult.OK)
                         {
                             CleanData(sGetCode);
+                            MessageBox.Show("Cambios realizados con éxito, es necesario reiniciar el sistema ", "Ticket");
+                            Application.Exit();
                         }
                     }
-
 
                 }
             }
@@ -264,7 +264,6 @@ namespace TicketPrint
         private void InsertData(string [] sCode, string sGetdate) {
             if (dataBase.TicketInsert(sCode, sGetdate))
             {
-
                 MessageBox.Show("Modificación realizada con éxito ", "Ticket");
             }
         }
@@ -272,7 +271,6 @@ namespace TicketPrint
         {
             if (dataBase.TicketClean(sCode))
             {
-
                 MessageBox.Show("Contador reiniciado con éxito", "Ticket");
             }
         }
@@ -283,7 +281,7 @@ namespace TicketPrint
              bValidationResetCounter = CheckReset.Checked;
             if (bValidationResetCounter)
             {
-                TxtSequence.Text = "00000000";
+                TxtSequence.Text = "00000001";
                 HideSelection(2);
                 BtnUpdate.Enabled = bValidationResetCounter;
                 
@@ -291,8 +289,6 @@ namespace TicketPrint
             else {
                 TxtSequence.Text = sCounter;
                 HideSelection(3);
-                
-
             }
             
         }
@@ -301,16 +297,14 @@ namespace TicketPrint
 
             if (CheckNewCode.Checked)
             {
-                TxtSequence.Text = "00000000";
+                TxtSequence.Text = "00000001";
                 HideSelection(7);
                 
             }
             else
             {
                 TxtSequence.Text = sCounter;
-                HideSelection(0);
-                
-
+                HideSelection(0);               
             }
         }
     }

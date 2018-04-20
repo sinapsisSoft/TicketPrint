@@ -1,6 +1,13 @@
-﻿using System;
+﻿/**************************************************************** 
+Author: Diego Casallas
+Date: 01/04/2018
+Description: class manager for Files     
+*******************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -12,6 +19,7 @@ namespace TicketPrint
     class FilesTicket
     {
         string sPath;
+   
         public void CreateFile(string[] sCode)
         {
             sPath = String.Format("ticket.txt", AppDomain.CurrentDomain.BaseDirectory);
@@ -68,14 +76,45 @@ namespace TicketPrint
         {
             try
             {
-                System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo(filePath);
-                psi.Verb = "PRINT";
-                Process.Start(psi);
+            
+                try
+                {
+                    /*printFont = new Font("Arial", 10);
+                    PrintDocument pd = new PrintDocument();
+                    pd.PrintPage += new PrintPageEventHandler(this.pd_PrintPage);
+                    pd.Print();*/
+                   
+                    string Sdata = @"COPY C:\Ticket\ticket.txt/B \\127.0.0.1\Honeywell";
+
+                    Process cmd = new Process();
+                    cmd.StartInfo.FileName = "cmd.exe";
+                    cmd.StartInfo.RedirectStandardInput = true;
+                    cmd.StartInfo.RedirectStandardOutput = true;
+                    cmd.StartInfo.CreateNoWindow = true;
+                    cmd.StartInfo.UseShellExecute = false;
+                    cmd.Start();
+                    //MessageBox.Show(cmd.ProcessName);
+                    cmd.StandardInput.WriteLine(Sdata);
+                    cmd.StandardInput.Flush();
+                    cmd.StandardInput.Close();
+                    cmd.WaitForExit();
+                    //Console.WriteLine(cmd.StandardOutput.ReadToEnd());
+
+                    
+                }
+                finally
+                {
+                    //streamToPrint.Close();
+                }
+
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error: "+ex.Message);
             }
         }
+
+
     }
 }

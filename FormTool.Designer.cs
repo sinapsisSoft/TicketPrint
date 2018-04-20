@@ -38,8 +38,8 @@
             this.TxtCodePB = new System.Windows.Forms.TextBox();
             this.BtnUpdate = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CheckReset = new System.Windows.Forms.CheckBox();
             this.CheckNewCode = new System.Windows.Forms.CheckBox();
+            this.CheckReset = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,7 +120,7 @@
             // BtnUpdate
             // 
             this.BtnUpdate.Enabled = false;
-            this.BtnUpdate.Location = new System.Drawing.Point(61, 194);
+            this.BtnUpdate.Location = new System.Drawing.Point(61, 199);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(134, 36);
             this.BtnUpdate.TabIndex = 7;
@@ -141,18 +141,6 @@
             this.panel1.Size = new System.Drawing.Size(259, 252);
             this.panel1.TabIndex = 8;
             // 
-            // CheckReset
-            // 
-            this.CheckReset.AutoSize = true;
-            this.CheckReset.Enabled = false;
-            this.CheckReset.Location = new System.Drawing.Point(23, 142);
-            this.CheckReset.Name = "CheckReset";
-            this.CheckReset.Size = new System.Drawing.Size(113, 17);
-            this.CheckReset.TabIndex = 8;
-            this.CheckReset.Text = "Reiniciar Contador";
-            this.CheckReset.UseVisualStyleBackColor = true;
-            this.CheckReset.CheckedChanged += new System.EventHandler(this.CheckValidateRestart);
-            // 
             // CheckNewCode
             // 
             this.CheckNewCode.AutoSize = true;
@@ -164,6 +152,18 @@
             this.CheckNewCode.Text = "Nuevo Código";
             this.CheckNewCode.UseVisualStyleBackColor = true;
             this.CheckNewCode.CheckedChanged += new System.EventHandler(this.CheckNewReference);
+            // 
+            // CheckReset
+            // 
+            this.CheckReset.AutoSize = true;
+            this.CheckReset.Enabled = false;
+            this.CheckReset.Location = new System.Drawing.Point(23, 142);
+            this.CheckReset.Name = "CheckReset";
+            this.CheckReset.Size = new System.Drawing.Size(113, 17);
+            this.CheckReset.TabIndex = 8;
+            this.CheckReset.Text = "Reiniciar Contador";
+            this.CheckReset.UseVisualStyleBackColor = true;
+            this.CheckReset.CheckedChanged += new System.EventHandler(this.CheckValidateRestart);
             // 
             // FormTool
             // 

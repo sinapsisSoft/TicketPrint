@@ -50,7 +50,6 @@ W:\Diego\Project\C#\TicketPrint\TicketPrint\bin\Debug\EntityFramework.xml
 W:\Diego\Project\C#\TicketPrint\TicketPrint\bin\Debug\EntityFramework.SqlServer.xml
 W:\Diego\Project\C#\TicketPrint\TicketPrint\bin\Debug\System.Data.SQLite.xml
 W:\Diego\Project\C#\TicketPrint\TicketPrint\bin\Debug\System.Data.SQLite.dll.config
-W:\Diego\Project\C#\TicketPrint\TicketPrint\obj\Debug\TicketPrint.csprojResolveAssemblyReference.cache
 W:\Diego\Project\C#\TicketPrint\TicketPrint\obj\Debug\TicketPrint.FormConfiguration.resources
 W:\Diego\Project\C#\TicketPrint\TicketPrint\obj\Debug\TicketPrint.Check_in.resources
 W:\Diego\Project\C#\TicketPrint\TicketPrint\obj\Debug\TicketPrint.FormTool.resources
@@ -59,3 +58,4 @@ W:\Diego\Project\C#\TicketPrint\TicketPrint\obj\Debug\TicketPrint.csproj.Generat
 W:\Diego\Project\C#\TicketPrint\TicketPrint\obj\Debug\TicketPrint.csproj.CoreCompileInputs.cache
 W:\Diego\Project\C#\TicketPrint\TicketPrint\obj\Debug\TicketPrint.exe
 W:\Diego\Project\C#\TicketPrint\TicketPrint\obj\Debug\TicketPrint.pdb
+W:\Diego\Project\C#\TicketPrint\TicketPrint\obj\Debug\TicketPrint.csprojResolveAssemblyReference.cache

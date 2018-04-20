@@ -1,4 +1,9 @@
-﻿using System;
+﻿/**************************************************************** 
+Author: Diego Casallas
+Date: 01/04/2018
+Description: class manager for create ticket     
+*******************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -42,7 +47,7 @@ namespace TicketPrint
             {
                 var appSettings = ConfigurationManager.AppSettings;
                 sCode = appSettings["codePB"];
-                sResultCode[0] = "" + "00000000";
+                sResultCode[0] = "" + "00000001";
                 sResultCode[1] = sCode;
             }
             catch (Exception ex)
