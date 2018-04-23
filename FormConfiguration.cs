@@ -1,4 +1,10 @@
-﻿using System;
+﻿/**************************************************************** 
+Author: Diego Casallas
+Date: 01/04/2018
+Description: class manager for create ticket 
+Company: Sinapsis Soft
+*******************************************************************/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

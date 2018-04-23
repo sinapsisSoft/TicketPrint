@@ -97,6 +97,7 @@
             // TxtCodeUser
             // 
             this.TxtCodeUser.Location = new System.Drawing.Point(147, 48);
+            this.TxtCodeUser.MaxLength = 30;
             this.TxtCodeUser.Name = "TxtCodeUser";
             this.TxtCodeUser.PasswordChar = '*';
             this.TxtCodeUser.Size = new System.Drawing.Size(103, 20);
@@ -109,6 +110,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(293, 198);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormConfiguration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
